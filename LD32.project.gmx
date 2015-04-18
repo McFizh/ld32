@@ -7,15 +7,19 @@
   <sounds name="sound">
     <sound>sound\music_sweet_battle</sound>
     <sound>sound\music_save_your</sound>
+    <sound>sound\snd_select</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="menuItems">
       <sprite>sprites\spr_menu_start</sprite>
       <sprite>sprites\spr_menu_audio</sprite>
     </sprites>
+    <sprite>sprites\spr_cloud</sprite>
+    <sprite>sprites\spr_hero</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
+    <background>background\gameTiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -24,9 +28,12 @@
   <objects name="objects">
     <object>objects\menu_btn_start</object>
     <object>objects\menu_btn_audio</object>
+    <object>objects\obj_cloud1</object>
+    <object>objects\obj_hero</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>
+    <room>rooms\rm_level1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

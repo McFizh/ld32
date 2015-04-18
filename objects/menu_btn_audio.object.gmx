@@ -103,6 +103,8 @@ if global.audioEnabled == 0
 {
     audio_stop_all()
     global.musicID = 0
+} else {
+    audio_play_sound(snd_select,10,false)
 }
 </string>
           </argument>

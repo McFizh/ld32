@@ -16,6 +16,11 @@
     </sprites>
     <sprite>sprites\spr_cloud</sprite>
     <sprite>sprites\spr_hero</sprite>
+    <sprite>sprites\spr_coll1</sprite>
+    <sprite>sprites\spr_coffeeCup</sprite>
+    <sprite>sprites\spr_coll2</sprite>
+    <sprite>sprites\spr_coll3</sprite>
+    <sprite>sprites\spr_controller</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
@@ -25,11 +30,23 @@
   <scripts name="scripts">
     <script>scripts\initGame.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_andy</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\menu_btn_start</object>
-    <object>objects\menu_btn_audio</object>
-    <object>objects\obj_cloud1</object>
     <object>objects\obj_hero</object>
+    <object>objects\obj_coffeeCup</object>
+    <object>objects\obj_cloud1</object>
+    <objects name="MainMenu">
+      <object>objects\menu_btn_audio</object>
+      <object>objects\menu_btn_start</object>
+      <object>objects\menuController</object>
+    </objects>
+    <objects name="Game walls">
+      <object>objects\obj_wall3</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_wall2</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>

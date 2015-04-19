@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,6 +27,34 @@
             <kind>1</kind>
             <string>image_speed = 0.4
 friction = 0.3
+
+can_shoot = true
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>can_shoot = true
+
+
 </string>
           </argument>
         </arguments>
@@ -49,27 +77,105 @@ friction = 0.3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_left)
+            <string>// Check keyboard
+if keyboard_check(vk_left) &amp;&amp; !place_meeting(x-3, y, obj_wall)
 {
     hspeed = -3
     image_xscale=-1
+    image_speed = 0.4
 }
 
-if keyboard_check(vk_right)
+if keyboard_check(vk_right) &amp;&amp; !place_meeting(x+3, y, obj_wall)
 {
     hspeed = 3
     image_xscale=1
+    image_speed = 0.4
 }
 
-if keyboard_check(vk_up)
+if keyboard_check(vk_up) &amp;&amp; !place_meeting(x, y-3, obj_wall)
 {
     vspeed = -3
+    image_speed = 0.4
 }
 
-if keyboard_check(vk_down)
+if keyboard_check(vk_down) &amp;&amp; !place_meeting(x, y+3, obj_wall)
 {
     vspeed = 3
+    image_speed = 0.4
 }
+
+if keyboard_check(vk_space) &amp;&amp; can_shoot == true
+{
+    var obj = instance_create(x,y,obj_coffeeCup)
+    
+    with (obj)
+    {
+        speed = 5
+        direction = point_direction(x,y, x + other.hspeed , y+other.vspeed)
+    }
+    
+    can_shoot = false
+    alarm[0] = 15
+}
+    
+// Stop animation
+if hspeed == 0 &amp;&amp; vspeed == 0
+    image_speed = 0    
+
+// Check for collisions
+var l1, prevfree
+if hspeed &gt; 0
+{
+    prevfree = 0
+    for(l1 = 1; l1&lt;3; l1++)
+    if place_meeting(x+l1, y, obj_wall)
+    {
+        hspeed = 0
+        x-=prevfree
+        break
+    } else prevfree = l1
+}
+
+if hspeed &lt; 0
+{
+    prevfree = 0
+    for(l1 = 1; l1&lt;3; l1++)
+    if place_meeting(x-l1, y, obj_wall)
+    {
+        hspeed = 0
+        x+=prevfree
+        break
+    } else prevfree = l1
+}
+
+if vspeed &gt; 0
+{
+    prevfree = 0
+    for(l1 = 1; l1&lt;5; l1++)
+    if place_meeting(x, y+l1, obj_wall)
+    {
+        vspeed = 0
+        y-=prevfree
+        break
+    } else prevfree = l1
+}
+      
+
+if vspeed &lt; 0
+{
+    prevfree = 0
+    for(l1 = 1; l1&lt;5; l1++)
+    if place_meeting(x, y-l1, obj_wall)
+    {
+        vspeed = 0
+        y+=prevfree
+        break
+    } else prevfree = l1
+}
+
+    
+    
+
 </string>
           </argument>
         </arguments>

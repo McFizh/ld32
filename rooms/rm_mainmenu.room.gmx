@@ -55,6 +55,7 @@
     <instance objName="menu_btn_audio" x="56" y="192" name="inst_0010ED9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cloud1" x="64" y="160" name="inst_CBAD016B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cloud1" x="192" y="96" name="inst_C779D9E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menuController" x="704" y="0" name="inst_1EF5E877" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

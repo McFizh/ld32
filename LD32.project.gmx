@@ -30,6 +30,7 @@
     <sprite>sprites\spr_sheepBullet</sprite>
     <sprite>sprites\spr_lifeleft</sprite>
     <sprite>sprites\spr_coffeeleft</sprite>
+    <sprite>sprites\spr_theend</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
@@ -39,6 +40,7 @@
   <scripts name="scripts">
     <script>scripts\initGame.gml</script>
     <script>scripts\getUnixtime.gml</script>
+    <script>scripts\endGame.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_andy</font>
@@ -62,6 +64,7 @@
       <object>objects\obj_homeArea</object>
     </objects>
     <object>objects\obj_sheepBullet</object>
+    <object>objects\obj_coffeeArea</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>

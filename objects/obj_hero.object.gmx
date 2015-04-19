@@ -83,7 +83,20 @@ global.coffeine = 100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Check keyboard
+            <string>// Don't allow control, if game is not running
+if !global.gameRunning
+{
+    if !keyboard_check(vk_space)
+        exit
+ 
+    if ( getUnixtime() - global.startTime ) &lt; 2
+        exit
+           
+    room_restart()
+    exit
+}
+    
+// Check keyboard
 if keyboard_check(vk_left) &amp;&amp; !place_meeting(x-3, y, obj_wall)
 {
     hspeed = -3
@@ -132,6 +145,13 @@ if keyboard_check(vk_space) &amp;&amp; can_shoot == true &amp;&amp; global.coffe
 if hspeed == 0 &amp;&amp; vspeed == 0
     image_speed = 0    
 
+//
+if health &lt;= 0
+{
+    endGame()
+    exit
+}    
+    
 // Check for collisions
 var l1, prevfree
 if hspeed &gt; 0

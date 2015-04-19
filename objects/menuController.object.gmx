@@ -37,6 +37,9 @@ draw_text(400,150, "&gt; Move character with arrows")
 draw_text(400,180, "&gt; Shoot coffee with space")
 draw_text(400,210, "&gt; Score increases every second")
 draw_text(400,240, "  spend on 4 'work' tiles")
+draw_text(400,270, "&gt; More coffee can be found from")
+draw_text(400,300, "  coffee room (stay on cup tiles)")
+
 </string>
           </argument>
         </arguments>

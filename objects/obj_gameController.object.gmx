@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=10
+            <string>alarm[0]=15
+global.gameRunning = true
 
 instance_create(100 + random(room_width-200), 100 + random(room_height-200), obj_sheep)
 global.numOfSheeps++
@@ -52,11 +53,21 @@ global.numOfSheeps++
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_hero)
+            <string>if global.gameRunning == false
+    exit
+
+with(obj_hero)
 {
     if place_meeting(x,y,obj_homeArea)
     {
         score++
+    }
+    
+    if place_meeting(x,y,obj_coffeeArea) &amp;&amp; global.coffeine &lt; 100
+    {
+        global.coffeine+=5
+        if(global.coffeine&gt;100)
+            global.coffeine = 100
     }
 }
 
@@ -70,7 +81,7 @@ if timespent mod 10 == 0 &amp;&amp; global.numOfSheeps &lt; maxSheeps
     global.numOfSheeps++
 }
 
-alarm[0]=10
+alarm[0]=15
 </string>
           </argument>
         </arguments>
@@ -117,6 +128,12 @@ draw_sprite_part(spr_coffeeleft,0,
                 760,55+hsize )
                                                
 draw_sprite(gui_lifebar, 0, 730, 40)
+
+if !global.gameRunning
+{
+    hsize = ( display_get_gui_width() - sprite_get_width(spr_theend) ) / 2
+    draw_sprite(spr_theend, 0, hsize, 100 )
+}
 </string>
           </argument>
         </arguments>

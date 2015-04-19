@@ -95,7 +95,13 @@
           <argument>
             <kind>1</kind>
             <string>instance_destroy()
-health-=5
+
+if health &gt; 0
+{
+    health-=5
+    if health &lt; 0
+        health = 0
+}
 </string>
           </argument>
         </arguments>

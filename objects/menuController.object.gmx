@@ -31,6 +31,12 @@ draw_set_halign(fa_left)
 
 draw_text(15,room_height-60, "Entry for \#ld32 and \#gm48 contests")
 draw_text(15,room_height-30, "Pekka Harjamäki [ mcfizh@gmail.com ]")
+
+draw_text(380,120, "How to play:")
+draw_text(400,150, "&gt; Move character with arrows")
+draw_text(400,180, "&gt; Shoot coffee with space")
+draw_text(400,210, "&gt; Score increases every second")
+draw_text(400,240, "  spend on 4 'work' tiles")
 </string>
           </argument>
         </arguments>

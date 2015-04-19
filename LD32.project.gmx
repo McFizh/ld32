@@ -8,19 +8,28 @@
     <sound>sound\music_sweet_battle</sound>
     <sound>sound\music_save_your</sound>
     <sound>sound\snd_select</sound>
+    <sound>sound\snd_glass</sound>
+    <sound>sound\snd_poof</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="menuItems">
       <sprite>sprites\spr_menu_start</sprite>
+      <sprite>sprites\spr_cloud</sprite>
       <sprite>sprites\spr_menu_audio</sprite>
     </sprites>
-    <sprite>sprites\spr_cloud</sprite>
     <sprite>sprites\spr_hero</sprite>
     <sprite>sprites\spr_coll1</sprite>
     <sprite>sprites\spr_coffeeCup</sprite>
     <sprite>sprites\spr_coll2</sprite>
     <sprite>sprites\spr_coll3</sprite>
     <sprite>sprites\spr_controller</sprite>
+    <sprite>sprites\spr_sheet</sprite>
+    <sprite>sprites\spr_coll4</sprite>
+    <sprite>sprites\gui_lifebar</sprite>
+    <sprite>sprites\gui_scorebar</sprite>
+    <sprite>sprites\spr_sheepBullet</sprite>
+    <sprite>sprites\spr_lifeleft</sprite>
+    <sprite>sprites\spr_coffeeleft</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
@@ -29,15 +38,19 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\initGame.gml</script>
+    <script>scripts\getUnixtime.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_andy</font>
+    <font>fonts\fnt_score</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_hero</object>
+    <object>objects\obj_sheep</object>
     <object>objects\obj_coffeeCup</object>
-    <object>objects\obj_cloud1</object>
+    <object>objects\obj_gameController</object>
     <objects name="MainMenu">
+      <object>objects\obj_cloud1</object>
       <object>objects\menu_btn_audio</object>
       <object>objects\menu_btn_start</object>
       <object>objects\menuController</object>
@@ -46,7 +59,9 @@
       <object>objects\obj_wall3</object>
       <object>objects\obj_wall</object>
       <object>objects\obj_wall2</object>
+      <object>objects\obj_homeArea</object>
     </objects>
+    <object>objects\obj_sheepBullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainmenu</room>

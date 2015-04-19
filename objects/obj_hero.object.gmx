@@ -30,6 +30,12 @@ friction = 0.3
 
 can_shoot = true
 
+global.startTime = getUnixtime()
+global.numOfSheeps = 0
+
+score = 0
+health = 100
+global.coffeine = 100
 </string>
           </argument>
         </arguments>
@@ -104,7 +110,7 @@ if keyboard_check(vk_down) &amp;&amp; !place_meeting(x, y+3, obj_wall)
     image_speed = 0.4
 }
 
-if keyboard_check(vk_space) &amp;&amp; can_shoot == true
+if keyboard_check(vk_space) &amp;&amp; can_shoot == true &amp;&amp; global.coffeine &gt; 0
 {
     var obj = instance_create(x,y,obj_coffeeCup)
     
@@ -115,7 +121,11 @@ if keyboard_check(vk_space) &amp;&amp; can_shoot == true
     }
     
     can_shoot = false
-    alarm[0] = 15
+    alarm[0] = 10
+    
+    global.coffeine -= 5
+    if global.coffeine &lt;= 0
+        global.coffeine = 0
 }
     
 // Stop animation
